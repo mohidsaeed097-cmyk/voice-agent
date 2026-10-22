@@ -7,10 +7,10 @@
 | Department | Members |
 | --- | --- |
 | PM / Scrum Master | Mohid |
-| Requirement Gathering | Bilal (lead), Sameer, Ehsaan, Faizan, Ahsan Ramzan |
-| Technical | Talal (lead), Shahzaib Ali, Mohsin, Mahd |
-| DevOps / Cloud | Rameez (lead), Mazhar, Hafiz Muhammad Abdullah |
-| Quality Assurance | Waqar (lead), Usman Shahid, Maheen, Laiqa, Maryam, Rameesa |
+| Requirement Gathering | Bilal, Sameer, Ehsaan, Faizan, Ahsan Ramzan |
+| Technical | Talal , Shahzaib Ali, Mohsin, Mahd |
+| DevOps / Cloud | Mazhar, Rameez, Hafiz Muhammad Abdullah |
+| Quality Assurance | Waqar, Usman Shahid, Maheen, Laiqa, Maryam, Rameesa |
 
 ## Sab se pehle: project ek line mein
 

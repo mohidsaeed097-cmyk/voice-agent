@@ -33,7 +33,7 @@ By the end of the sprint, every team member's laptop runs a voice agent that ans
 | 1-day deadline | Small MVP, 3 core features |
 | Free tools only | Groq free tier, ElevenLabs free tier, LiveKit Cloud free, Open-Meteo |
 | Mostly Windows laptops | Windows-first README and error guide |
-| 22 laptops | Every member uses their own keys so free limits are not shared |
+| 19 laptops | Every member uses their own keys so free limits are not shared |
 
 ## Tools required by the client (sir)
 

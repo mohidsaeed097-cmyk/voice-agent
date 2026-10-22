@@ -1,6 +1,16 @@
-# Team Briefing — Har Department Ne Kya Kiya
+# Team Alpha — Har Department Ne Kya Kiya
 
 > Ye file har member zaroor padhe. Is mein likha hai ke tumhare department ka kaam kya tha, repo mein woh kahan hai, aur **sir poochein to kya bolna hai**.
+
+## Team Alpha
+
+| Department | Members |
+| --- | --- |
+| PM / Scrum Master | Mohid |
+| Requirement Gathering | Bilal (lead), Sameer, Ehsaan, Faizan, Ahsan Ramzan |
+| Technical | Talal (lead), Shahzaib Ali, Mohsin, Mahd |
+| DevOps / Cloud | Rameez (lead), Mazhar, Hafiz Muhammad Abdullah |
+| Quality Assurance | Waqar (lead), Usman Shahid, Maheen, Laiqa, Maryam, Rameesa |
 
 ## Sab se pehle: project ek line mein
 
@@ -18,16 +28,25 @@ Tum bolte ho → Silero VAD (bolna khatam hua?) → Groq Whisper (awaaz → text
 ## Har member ka 15 minute ka kaam (lazmi)
 
 1. Repo apne laptop par clone karo aur agent chalao (README ke steps)
-2. Apne department ka section neeche padho
-3. Repo mein apne department ki files khol ke dekho
-4. "Har member ke 5 sawal" (sab se neeche) yaad karo
-5. **QA members:** test cases khud chala ke `docs/qa/test-cases.md` mein Result likhwao
+2. Agent se "What's the weather in Lahore?" poocho, aur jawab ka **screenshot group mein bhejo** (isi se tumhara laptop sign-off sheet mein Pass hoga)
+3. Apne department ka section neeche padho, aur **apna role** dekho
+4. Repo mein apne department ki files khol ke dekho
+5. "Har member ke 5 sawal" (sab se neeche) yaad karo
 
 ---
 
-## 1. Requirement Gathering (4 members)
+## 1. Requirement Gathering (5 members)
 
 **Tumhara kaam kya tha:** ye tay karna ke agent **kya** karega. Sir ki baat (requirement) ko user stories mein badalna, taake Technical ko pata ho kya banana hai aur QA ko pata ho kya test karna hai.
+
+**Kis ka kya role:**
+| Member | Role | File |
+| --- | --- | --- |
+| Bilal (lead) | User stories US-01 se US-04 (Must) | `user-stories.md` |
+| Sameer | User stories US-05 se US-08 | `user-stories.md` |
+| Ehsaan | Scope: kya banega, kya nahi | `scope.md` |
+| Faizan | 10 sample sawal | `sample-questions.md` |
+| Ahsan Ramzan | Traceability: har story ko QA test case se link | `user-stories.md` (aakhri table) |
 
 **Repo mein tumhara kaam:**
 | File | Kya hai |
@@ -46,9 +65,16 @@ Tum bolte ho → Silero VAD (bolna khatam hua?) → Groq Whisper (awaaz → text
 
 ---
 
-## 2. DevOps / Cloud (2 members)
+## 2. DevOps / Cloud (3 members)
 
 **Tumhara kaam kya tha:** code ka ghar banana (GitHub repo) aur ye pakka karna ke **wahi code har laptop par ek jaisa chale**, aur keys safe rahein.
+
+**Kis ka kya role:**
+| Member | Role |
+| --- | --- |
+| Rameez (lead) | GitHub repo, `.gitignore`, `.env.example`, `requirements.txt`, release `v1.0` |
+| Mazhar | `README.md`: Windows setup guide, aur saaf laptop par test |
+| Hafiz Muhammad Abdullah | `common-errors.md`, keys ki security, bug report template |
 
 **Repo mein tumhara kaam:**
 | File | Kya hai |
@@ -71,29 +97,37 @@ Tum bolte ho → Silero VAD (bolna khatam hua?) → Groq Whisper (awaaz → text
 
 ---
 
-## 3. Technical (9 members)
+## 3. Technical (4 members)
 
 **Tumhara kaam kya tha:** asal agent banana: code, tools, personality aur design.
 
-### Core devs (4) → `agent.py`
+**Kis ka kya role:**
+| Member | Role | File |
+| --- | --- | --- |
+| Talal (lead) | Core pipeline: AgentSession (VAD, STT, LLM, TTS), PRs merge | `agent.py` |
+| Shahzaib Ali | Core: tools register karna, greeting, Urdu/English language setup | `agent.py` |
+| Mohsin | Tools: `get_weather` (Open-Meteo) aur `get_time` | `tools.py` |
+| Mahd | Prompt (personality, rules) + architecture diagram + conversation design | `prompt.txt`, `docs/design/` |
+
+### Core devs (Talal, Shahzaib Ali) → `agent.py`
 **Kya kiya:** pipeline banai: `AgentSession` mein VAD + STT + LLM + TTS jode, tools register kiye, greeting lagai.
 
 **Sir ko bolo:**
-> "Sir, `agent.py` mein pipeline hai. Silero VAD detect karta hai ke user ne bolna kab band kiya. Groq Whisper awaaz ko text banata hai aur language khud detect karta hai, English ya Urdu. Groq ka LLM `gpt-oss-120b` sochta hai. ElevenLabs Flash v2.5 jawab bolta hai. LiveKit ka `AgentSession` in sab ko real-time mein jodta hai, aur interruption bhi handle karta hai."
+> "Sir, `agent.py` mein pipeline hai. Silero VAD detect karta hai ke user ne bolna kab band kiya. Groq Whisper awaaz ko text banata hai aur language khud detect karta hai, English ya Urdu. Groq ka LLM `gpt-oss-120b` sochta hai. ElevenLabs ka Eleven v3 Conversational model jawab bolta hai; ye real-time hai aur Urdu support karta hai. LiveKit ka `AgentSession` in sab ko real-time mein jodta hai, aur interruption bhi handle karta hai."
 
-### Tool devs (2) → `tools.py`
+### Tools (Mohsin) → `tools.py`
 **Kya kiya:** `get_weather(city)` aur `get_time()` banaye.
 
 **Sir ko bolo:**
 > "Sir, LLM ki knowledge ek date tak hai, us ko aaj ka weather nahi pata. Is liye humne **function calling** use ki. `get_weather` ek Python function hai jo Open-Meteo API se pehle city ka latitude/longitude leta hai, phir live weather. LLM khud decide karta hai ke ye function kab chalana hai. Open-Meteo free hai aur key nahi chahiye. Galat city par function saaf message deta hai, taake agent andaza na lagaye."
 
-### Prompt engineer (1) → `prompt.txt`
+### Prompt (Mahd) → `prompt.txt`
 **Kya kiya:** agent ki personality aur rules likhe.
 
 **Sir ko bolo:**
-> "Sir, prompt agent ka behaviour tay karta hai. Naam Sana hai. Jawab 1–3 jumlon mein, kyunke ye bolne wala agent hai. Koi markdown ya emoji nahi, kyunke wo bolne mein ajeeb lagte hain. Sab se important rule: weather aur time ke liye **hamesha tool** use karo, kabhi andaza mat lagao. Aur user jis zabaan mein bole, usi mein jawab do."
+> "Sir, prompt agent ka behaviour tay karta hai. Naam Sana hai. Jawab 1–3 jumlon mein, kyunke ye bolne wala agent hai. Koi markdown ya emoji nahi, kyunke wo bolne mein ajeeb lagte hain. Sab se important rule: weather aur time ke liye **hamesha tool** use karo, kabhi andaza mat lagao. Aur user jis zabaan mein bole, usi mein jawab do. Urdu mein Urdu ke alfaaz, aur numbers lafzon mein, taake awaaz atke nahi."
 
-### Designers (2) → `docs/design/`
+### Design (Mahd) → `docs/design/`
 **Kya kiya:** architecture diagram, conversation flow, aur slides.
 
 **Sir ko bolo:**
@@ -103,20 +137,30 @@ Tum bolte ho → Silero VAD (bolna khatam hua?) → Groq Whisper (awaaz → text
 
 ---
 
-## 4. Quality Assurance (7 members)
+## 4. Quality Assurance (6 members)
 
 **Tumhara kaam kya tha:** sabit karna ke agent wahi karta hai jo stories mein likha hai, **aur har laptop par chalta hai**. QA code nahi likhta. QA test karta hai, bugs pakadta hai, aur har laptop ko Pass/Fail deta hai.
+
+**Kis ka kya role:**
+| Member | Role |
+| --- | --- |
+| Waqar (lead) | Test cases ki file, test report, aur 3 laptops ka sign-off |
+| Usman Shahid | Functional tests (TC-01 se TC-05), 3 laptops ka sign-off |
+| Maheen | Language aur Urdu tests (TC-06 se TC-08), 3 laptops |
+| Laiqa | Edge cases (shor, galat city, internet band), 3 laptops |
+| Maryam | Bug log aur retest, 3 laptops |
+| Rameesa | Security checks (keys GitHub par na hon), response time, 3 laptops |
 
 **Repo mein tumhara kaam:**
 | File | Kya hai |
 | --- | --- |
 | `docs/qa/test-cases.md` | 10 test cases, 5 edge cases, 3 security checks, har ek user story se linked |
-| `docs/qa/bug-log.md` | 8 asli bugs jo mile, un ki wajah aur fix |
+| `docs/qa/bug-log.md` | 9 asli bugs jo mile, un ki wajah aur fix |
 | `docs/qa/laptop-signoff.md` | Har laptop ka Pass/Fail |
 | `docs/qa/test-report.md` | Kul nateeja |
 
 **Sir poochein to bolo:**
-> "Sir, humne Requirements ki acceptance criteria se 10 test cases banaye, har user story ke liye kam az kam ek. Saath mein edge cases bhi: shor, galat city, internet band, aaj ki news. Testing mein 8 bugs mile. Zyada tar Windows setup ke the: Python PATH, venv active na hona, keys galat copy hona. Ek model ka 404 error tha, wo Technical ne model badal ke fix kiya. Sab bugs `bug-log.md` mein hain. Phir har laptop par 5 demo sawal chala ke sign-off diya, isi liye aap kisi ka bhi laptop utha sakte hain."
+> "Sir, humne Requirements ki acceptance criteria se 10 test cases banaye, har user story ke liye kam az kam ek. Saath mein edge cases bhi: shor, galat city, internet band, aaj ki news. Testing mein 9 bugs mile. Zyada tar Windows setup ke the: Python PATH, venv active na hona, keys galat copy hona. Ek model ka 404 error tha, wo Technical ne model badal ke fix kiya. Aur Urdu ka jawab Hindi jaisa lag raha tha aur numbers par awaaz atak rahi thi; Technical ne voice model badla aur numbers lafzon mein karwaye. Sab bugs `bug-log.md` mein hain. Phir har member ne apne laptop par agent chala ke screenshot bheja, aur humne har laptop ka sign-off diya, isi liye aap kisi ka bhi laptop utha sakte hain."
 
 **Agar sir poochein:**
 - *Test case kya hota hai?* → ID, steps, expected result, aur actual result. Isay chala ke Pass/Fail likhte hain.

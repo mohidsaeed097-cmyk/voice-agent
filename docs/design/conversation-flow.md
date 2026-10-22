@@ -47,5 +47,6 @@ flowchart TD
 ## Design decisions
 
 - **Always use the tool for weather and time** — written as a rule in the prompt, so the model never invents weather.
-- **Urdu is written in Devanagari script internally** — the ElevenLabs voice pronounces Devanagari naturally, and spoken Urdu and Hindi sound the same, so the user hears natural Urdu.
+- **Urdu in Urdu script, with Urdu words** — the first version wrote Urdu in Devanagari and it sounded like Hindi (BUG-09). Now the voice model (Eleven v3 Conversational) speaks Urdu directly, and the prompt asks for Urdu words ("mausam", "darje", "shukriya").
+- **Numbers as words** — "sattaees darje" instead of "27°C", because digits and symbols made the voice stumble.
 - **Honest when unsure** — reduces made-up answers ("hallucination").

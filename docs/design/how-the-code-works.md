@@ -11,7 +11,8 @@ session = AgentSession(
     vad=silero.VAD.load(),                                        # 1. when did the user stop talking?
     stt=groq.STT(model="whisper-large-v3-turbo", detect_language=True),  # 2. speech -> text (English/Urdu)
     llm=groq.LLM(model="openai/gpt-oss-120b"),                    # 3. think, call tools
-    tts=elevenlabs.TTS(model="eleven_flash_v2_5"),                # 4. text -> voice
+    tts=elevenlabs.TTS(model="eleven_v3_conversational",         # 4. text -> voice (Urdu supported)
+                   apply_text_normalization="on"),            #    spell out numbers
 )
 await session.start(room=ctx.room, agent=Assistant())             # start listening
 await session.generate_reply(instructions="Greet the user...")    # say hello first
@@ -47,7 +48,8 @@ async def get_weather(city: str) -> str:
 - Name **Sana**, friendly, 1–3 sentence answers (it is spoken).
 - No markdown, lists or emojis (they sound strange when read aloud).
 - **Always call the tool** for weather and time — never guess.
-- Reply in the user's language (English or Urdu).
+- Reply in the user's language (English or Urdu), Urdu with Urdu vocabulary, not Hindi.
+- Write all numbers as words, no symbols like ° or %, so the voice reads them smoothly.
 - Be honest when it doesn't know (e.g. today's news).
 
 ## Settings without touching code (`.env`)
@@ -55,7 +57,7 @@ async def get_weather(city: str) -> str:
 | Variable | Default | Purpose |
 | --- | --- | --- |
 | `GROQ_LLM_MODEL` | `openai/gpt-oss-120b` | Change the brain model |
-| `ELEVEN_MODEL` | `eleven_flash_v2_5` | Change the voice model |
+| `ELEVEN_MODEL` | `eleven_v3_conversational` | Change the voice model. If your account can't use v3, set `eleven_flash_v2_5` — the agent then writes Urdu in Devanagari automatically |
 | `ELEVEN_VOICE_ID` | ElevenLabs default | Choose a different voice |
 
 ## How to add a new skill (example: currency rate)

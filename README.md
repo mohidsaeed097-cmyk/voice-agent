@@ -1,6 +1,6 @@
 # 🎙️ Sana — Voice Agent
 
-**Software Project Management · SST** · LiveKit + Groq + ElevenLabs
+**Team Alpha** · Software Project Management · SST · LiveKit + Groq + ElevenLabs
 
 A voice assistant you talk to. Ask anything, the **live weather** of any city, or the **time** — in **English or Urdu** — and it answers out loud.
 

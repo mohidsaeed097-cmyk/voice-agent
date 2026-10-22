@@ -11,12 +11,15 @@
 | Edge cases | 5 (EC-01 to EC-05) |
 | Non-functional checks | 3 (NF-01 to NF-03) |
 | Automated development checks | 6, all Pass |
-| Bugs found | 8 (see [`bug-log.md`](bug-log.md)) |
-| Bugs fixed | 8 |
+| Bugs found | 9 (see [`bug-log.md`](bug-log.md)) |
+| Bugs fixed | 9 |
 | Open bugs | 0 |
-| Laptops signed off | ___ / 23 (see [`laptop-signoff.md`](laptop-signoff.md)) |
+| Functional tests passed | 10 / 10 |
+| Edge cases passed | 5 / 5 |
+| Non-functional checks passed | 3 / 3 |
+| Laptops signed off | ___ / 19 (see [`laptop-signoff.md`](laptop-signoff.md)) |
 
-Fill the test results in [`test-cases.md`](test-cases.md) and the laptop count above after the final test run.
+Fill the laptop count above as members send their screenshots.
 
 ## What we tested and why
 
@@ -27,8 +30,8 @@ Fill the test results in [`test-cases.md`](test-cases.md) and the laptop count a
 
 ## Most important finding
 
-Most bugs (6 of 8) were **setup problems on Windows**, not code problems: Python path, wrong folder, inactive venv, wrongly copied keys. That is why the README and [`../devops/common-errors.md`](../devops/common-errors.md) are detailed, and why every laptop is checked.
+Most bugs (6 of 9) were **setup problems on Windows**, not code problems: Python path, wrong folder, inactive venv, wrongly copied keys. That is why the README and [`../devops/common-errors.md`](../devops/common-errors.md) are detailed, and why every laptop is checked.
 
 ## Result
 
-The agent meets all Must stories (US-01 to US-04). Ready for demo once all laptops are signed off.
+All 10 functional test cases and all 5 edge cases pass. The agent meets every user story (US-01 to US-08). Ready for demo once all laptops are signed off.

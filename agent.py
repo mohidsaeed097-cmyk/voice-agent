@@ -25,7 +25,24 @@ from tools import get_time, get_weather
 
 load_dotenv(Path(__file__).parent / ".env")
 
-PROMPT = (Path(__file__).parent / "prompt.txt").read_text(encoding="utf-8")
+PROMPT_TEMPLATE = (Path(__file__).parent / "prompt.txt").read_text(encoding="utf-8")
+
+# Voice model. Eleven v3 Conversational is real-time and supports Urdu (and 70+ languages).
+# If your ElevenLabs account can't use it, set ELEVEN_MODEL=eleven_flash_v2_5 in .env.
+ELEVEN_MODEL = os.getenv("ELEVEN_MODEL", "eleven_v3_conversational")
+
+# Which script the LLM should write Urdu in, so the voice pronounces it naturally:
+# - v3 models speak Urdu script directly.
+# - Flash v2.5 has no Urdu, but speaks Hindi (Devanagari) script, which sounds like spoken Urdu.
+if ELEVEN_MODEL.startswith(("eleven_v3", "eleven_v4")):
+    URDU_SCRIPT_RULE = "Write Urdu replies in Urdu script (Nastaliq / Arabic letters), not Roman Urdu and not Devanagari."
+else:
+    URDU_SCRIPT_RULE = (
+        "Write Urdu replies in Devanagari script (the voice engine reads Devanagari naturally and it sounds "
+        "like spoken Urdu), but keep the vocabulary Urdu, not Hindi."
+    )
+
+PROMPT = PROMPT_TEMPLATE.replace("{URDU_SCRIPT_RULE}", URDU_SCRIPT_RULE)
 
 
 class Assistant(Agent):
@@ -41,9 +58,8 @@ server = AgentServer()
 
 @server.rtc_session()
 async def entrypoint(ctx: agents.JobContext):
-    # Flash v2.5 is multilingual: it reads the reply text and speaks
-    # English or Hindi/Urdu automatically, and it is ElevenLabs' fastest model.
-    tts_options = {"model": os.getenv("ELEVEN_MODEL", "eleven_flash_v2_5")}
+    # apply_text_normalization="on": the voice engine spells out any number the LLM still writes as digits.
+    tts_options = {"model": ELEVEN_MODEL, "apply_text_normalization": "on"}
     if os.getenv("ELEVEN_VOICE_ID"):
         tts_options["voice_id"] = os.getenv("ELEVEN_VOICE_ID")
 

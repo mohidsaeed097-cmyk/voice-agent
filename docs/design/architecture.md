@@ -34,7 +34,7 @@ flowchart LR
 | LLM | Groq (`openai/gpt-oss-120b`) | Understands the question, decides the answer, calls tools | `llm=groq.LLM(...)` |
 | Tools | Python functions | Fetch live data the LLM cannot know | `tools.py` |
 | Weather data | Open-Meteo | Free weather API, no key needed | `tools.py` → `get_weather` |
-| TTS | ElevenLabs (`eleven_flash_v2_5`) | Speaks the answer in a natural, multilingual voice | `tts=elevenlabs.TTS(...)` |
+| TTS | ElevenLabs (`eleven_v3_conversational`) | Speaks the answer in a natural voice; real-time; supports Urdu and 70+ languages | `tts=elevenlabs.TTS(...)` |
 | Personality | `prompt.txt` | Name, rules, short answers, always use tools for weather/time | `Assistant(instructions=PROMPT)` |
 
 ## How a weather question flows (function calling)

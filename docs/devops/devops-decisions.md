@@ -25,7 +25,7 @@
 | **Virtual environment (`venv`)** | Keeps project packages separate, so every laptop has the same versions |
 | **Pinned framework version** (`livekit-agents~=1.8`) | Every laptop installs a compatible version |
 | **Model names configurable in `.env`** | If a model is unavailable for an account, change one line — no code change |
-| **Open-Meteo for weather** | Free, no API key, so 22 people don't need another account |
+| **Open-Meteo for weather** | Free, no API key, so 19 people don't need another account |
 | **Two run modes** (console / dev) | Console needs nothing but the laptop; dev mode gives a browser demo through LiveKit Cloud |
 
 ## Deployment model
@@ -36,5 +36,5 @@ Code is the same everywhere; each laptop is an independent deployment using its 
 GitHub repo (one code base)
    ├── git clone → Laptop 1 (+ member 1's keys) → agent runs
    ├── git clone → Laptop 2 (+ member 2's keys) → agent runs
-   └── ... 23 laptops
+   └── ... 19 laptops
 ```

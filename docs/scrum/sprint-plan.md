@@ -1,19 +1,20 @@
 # Sprint Plan
 
-**Scrum Master / Project Manager:** Mohid
+**Team Alpha** · **Scrum Master / Project Manager:** Mohid
 
 ## Sprint goal
 
 > By the end of the day, every team member's laptop runs a voice agent that answers spoken questions — including the live weather.
 
-## Team
+## Team Alpha (19 members)
 
 | Department | Members | Responsible for |
 | --- | --- | --- |
-| DevOps / Cloud | 2 | Repo, setup, README, keys safety, release |
-| Requirement Gathering | 4 | User stories, scope, sample questions |
-| Technical | 9 (4 core devs, 2 tool devs, 1 prompt engineer, 2 designers) | Code, tools, prompt, architecture, slides |
-| Quality Assurance | 7 (1 lead, 6 testers) | Test cases, bug reports, laptop sign-off |
+| PM / Scrum Master | Mohid | Sprint planning, board, standups, blockers, scope |
+| Requirement Gathering (5) | Bilal (lead), Sameer, Ehsaan, Faizan, Ahsan Ramzan | User stories, scope, sample questions |
+| Technical (4) | Talal (lead), Shahzaib Ali, Mohsin, Mahd | Code, tools, prompt, architecture |
+| DevOps / Cloud (3) | Rameez (lead), Mazhar, Hafiz Muhammad Abdullah | Repo, setup, README, keys safety, release |
+| Quality Assurance (6) | Waqar (lead), Usman Shahid, Maheen, Laiqa, Maryam, Rameesa | Test cases, bug reports, laptop sign-off |
 
 ## Sprint timeline
 

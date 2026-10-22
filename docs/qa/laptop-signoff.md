@@ -1,7 +1,8 @@
-# Laptop Sign-off Sheet
+# Laptop Sign-off Sheet — Team Alpha
 
 **Department:** Quality Assurance
-**Rule:** a laptop is **Pass** only when all 5 demo questions work on it.
+**Rule:** a laptop is **Pass** only when the agent runs on it and all 5 demo questions work.
+**Proof:** each member sends a screenshot of the agent answering "What's the weather in Lahore?" in the group; the assigned QA tester then marks the row.
 
 **5 demo questions:**
 1. "Hello, who are you?"
@@ -10,28 +11,26 @@
 4. "What time is it?"
 5. "What's the weather in Xyzabc?" → polite error
 
-| # | Member name | Department | Python + Git OK | Keys in `.env` | Agent runs | 5 questions | Result |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 0 | Mohid (Scrum Master) | PM | | | | | |
-| 1 | | | | | | | |
-| 2 | | | | | | | |
-| 3 | | | | | | | |
-| 4 | | | | | | | |
-| 5 | | | | | | | |
-| 6 | | | | | | | |
-| 7 | | | | | | | |
-| 8 | | | | | | | |
-| 9 | | | | | | | |
-| 10 | | | | | | | |
-| 11 | | | | | | | |
-| 12 | | | | | | | |
-| 13 | | | | | | | |
-| 14 | | | | | | | |
-| 15 | | | | | | | |
-| 16 | | | | | | | |
-| 17 | | | | | | | |
-| 18 | | | | | | | |
-| 19 | | | | | | | |
-| 20 | | | | | | | |
-| 21 | | | | | | | |
-| 22 | | | | | | | |
+| # | Member | Department | QA tester | Python + Git OK | Keys in `.env` | Agent runs | 5 questions | Result |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0 | Mohid | PM / Scrum Master | Waqar | Yes | Yes | Yes | | |
+| 1 | Bilal | Requirements | Usman Shahid | | | | | |
+| 2 | Sameer | Requirements | Usman Shahid | | | | | |
+| 3 | Ehsaan | Requirements | Usman Shahid | | | | | |
+| 4 | Faizan | Requirements | Maheen | | | | | |
+| 5 | Ahsan Ramzan | Requirements | Maheen | | | | | |
+| 6 | Talal | Technical | Maheen | | | | | |
+| 7 | Shahzaib Ali | Technical | Laiqa | | | | | |
+| 8 | Mohsin | Technical | Laiqa | | | | | |
+| 9 | Mahd | Technical | Laiqa | | | | | |
+| 10 | Rameez | DevOps | Maryam | | | | | |
+| 11 | Mazhar | DevOps | Maryam | | | | | |
+| 12 | Hafiz Muhammad Abdullah | DevOps | Maryam | | | | | |
+| 13 | Waqar | QA | Rameesa | | | | | |
+| 14 | Usman Shahid | QA | Rameesa | | | | | |
+| 15 | Maheen | QA | Rameesa | | | | | |
+| 16 | Laiqa | QA | Waqar | | | | | |
+| 17 | Maryam | QA | Waqar | | | | | |
+| 18 | Rameesa | QA | Waqar | | | | | |
+
+**Total:** ___ / 19 Pass

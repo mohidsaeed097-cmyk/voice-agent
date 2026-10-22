@@ -1,0 +1,4 @@
+livekit-agents[groq,elevenlabs,silero]~=1.8
+python-dotenv
+aiohttp
+tzdata

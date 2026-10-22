@@ -42,7 +42,7 @@ Tum bolte ho → Silero VAD (bolna khatam hua?) → Groq Whisper (awaaz → text
 **Kis ka kya role:**
 | Member | Role | File |
 | --- | --- | --- |
-| Bilal (lead) | User stories US-01 se US-04 (Must) | `user-stories.md` |
+| Bilal | User stories US-01 se US-04 | `user-stories.md` |
 | Sameer | User stories US-05 se US-08 | `user-stories.md` |
 | Ehsaan | Scope: kya banega, kya nahi | `scope.md` |
 | Faizan | 10 sample sawal | `sample-questions.md` |
@@ -72,7 +72,7 @@ Tum bolte ho → Silero VAD (bolna khatam hua?) → Groq Whisper (awaaz → text
 **Kis ka kya role:**
 | Member | Role |
 | --- | --- |
-| Rameez (lead) | GitHub repo, `.gitignore`, `.env.example`, `requirements.txt`, release `v1.0` |
+| Rameez | GitHub repo, `.gitignore`, `.env.example`, `requirements.txt`, release `v1.0` |
 | Mazhar | `README.md`: Windows setup guide, aur saaf laptop par test |
 | Hafiz Muhammad Abdullah | `common-errors.md`, keys ki security, bug report template |
 
@@ -104,10 +104,10 @@ Tum bolte ho → Silero VAD (bolna khatam hua?) → Groq Whisper (awaaz → text
 **Kis ka kya role:**
 | Member | Role | File |
 | --- | --- | --- |
-| Talal (lead) | Core pipeline: AgentSession (VAD, STT, LLM, TTS), PRs merge | `agent.py` |
+| Mahad | Core pipeline: AgentSession (VAD, STT, LLM, TTS), PRs merge | `agent.py` |
 | Shahzaib Ali | Core: tools register karna, greeting, Urdu/English language setup | `agent.py` |
 | Mohsin | Tools: `get_weather` (Open-Meteo) aur `get_time` | `tools.py` |
-| Mahd | Prompt (personality, rules) + architecture diagram + conversation design | `prompt.txt`, `docs/design/` |
+| talal | Prompt (personality, rules) + architecture diagram + conversation design | `prompt.txt`, `docs/design/` |
 
 ### Core devs (Talal, Shahzaib Ali) → `agent.py`
 **Kya kiya:** pipeline banai: `AgentSession` mein VAD + STT + LLM + TTS jode, tools register kiye, greeting lagai.
@@ -144,7 +144,7 @@ Tum bolte ho → Silero VAD (bolna khatam hua?) → Groq Whisper (awaaz → text
 **Kis ka kya role:**
 | Member | Role |
 | --- | --- |
-| Waqar (lead) | Test cases ki file, test report, aur 3 laptops ka sign-off |
+| Waqar | Test cases ki file, test report, aur 3 laptops ka sign-off |
 | Usman Shahid | Functional tests (TC-01 se TC-05), 3 laptops ka sign-off |
 | Maheen | Language aur Urdu tests (TC-06 se TC-08), 3 laptops |
 | Laiqa | Edge cases (shor, galat city, internet band), 3 laptops |
